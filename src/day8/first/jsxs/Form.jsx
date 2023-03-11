@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import nextId from "react-id-generator";
+import nextId from 'react-id-generator';
 import { addTodo } from "../redux/modules/todos";
 
 const Form = () => {
@@ -12,7 +12,7 @@ const Form = () => {
         id: 0,
         title: '',
         body: '',
-        isDone: false,
+        isDone: false
     });
 
     const onChangeHandler = (event) => {
@@ -22,14 +22,14 @@ const Form = () => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        if(todo.title.trim() === '' || todo.body.trim() === '') return;
+        if (todo.title.trim() === '' || todo.body.trim() === '') return;
 
         dispatch(addTodo({...todo, id}));
         setTodo({
             id: 0,
             title: '',
             body: '',
-            isDone: false,
+            isDone: false
         });
     };
 
@@ -67,7 +67,7 @@ const StInputGroup = styled.div`
 const StFormLabel = styled.label`
     font-size: 16px;
     font-weight: 700;
-`;
+`
 
 const StAddForm = styled.form`
     background-color: #eee;

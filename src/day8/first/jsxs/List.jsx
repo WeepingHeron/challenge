@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTodo, toggleStatusTodo } from "../redux/modules/todos";
+import { deleteTodo,toggleStatusTodo } from "../redux/modules/todos";
 import { Link } from "react-router-dom";
 
 const List = () => {
     const dispatch = useDispatch();
     const todos = useSelector((state) => state.todos.todos);
 
-    const onDeleteTodo = (id) => {
+    const onDeleteTodo =(id) => {
         dispatch(deleteTodo(id));
     };
 
@@ -34,7 +34,7 @@ const List = () => {
                                 <StDialogFooter>
                                     <StButton
                                         borderColor='red'
-                                        onClick={() => onDeleteTodo(todo.id)}
+                                        onClick={() => onToggleStatusTodo(todo.id)}
                                     >
                                         삭제하기
                                     </StButton>
@@ -105,7 +105,7 @@ const StListWrapper = styled.div`
 const StTodoContainer = styled.div`
     width: 270px;
     border: 4px solid teal;
-    min-height: 150px;
+    min-height: 150;
     border-radius: 12px;
     padding: 12px 24px 24px 24px;
 `;
