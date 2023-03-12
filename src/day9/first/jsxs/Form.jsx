@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 import { useDispatch } from "react-redux";
-import nextId from 'react-id-generator';
+import nextId from "react-id-generator";
 import { addTodo } from "../redux/modules/todos";
 
 const Form = () => {
@@ -10,8 +10,8 @@ const Form = () => {
     const dispatch = useDispatch();
     const [todo, setTodo] = useState({
         id: 0,
-        title: '',
-        body: '',
+        title:'',
+        body:'',
         isDone: false
     });
 
@@ -43,17 +43,10 @@ const Form = () => {
                 value={todo.title}
                 onChange={onChangeHandler}
             />
-            <StFormLabel>내용</StFormLabel>
-            <StAddInput
-                type='text'
-                name='body'
-                value={todo.body}
-                onChange={onChangeHandler}
-            />
             </StInputGroup>
             <StAddButton>추가하기</StAddButton>
         </StAddForm>
-    );
+    )
 };
 
 export default Form;
@@ -80,7 +73,7 @@ const StAddForm = styled.form`
     gap: 20px;
 `;
 
-const StAddInput = styled.input`
+const StAddInput = styled.div`
     height: 40px;
     width: 240px;
     border: none;
