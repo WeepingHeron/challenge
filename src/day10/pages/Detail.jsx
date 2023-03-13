@@ -64,7 +64,7 @@ const StDialogHeader = styled.div`
     justify-content: space-between;
     padding: 0 24px;
     align-items: center;
-`;
+`
 
 const StTitle = styled.h1`
     padding: 0 24px;
