@@ -17,7 +17,7 @@ const Form = () => {
 
     const onChangeHandler = (event) => {
         const { name, value } = event.target;
-        setTodo({...todo, [name]: value });
+        setTodo({...todo, [name]: value});
     };
 
     const onSubmitHandler = (event) => {
@@ -34,7 +34,7 @@ const Form = () => {
     };
 
     return (
-        <StAddForm onSubmit={onSubmitHandler}>
+        <StAddForm onsubmit={onSubmitHandler}>
             <StInputGroup>
                 <StFormLabel>제목</StFormLabel>
                 <StAddInput

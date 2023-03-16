@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTodo,toggleStatusTodo } from "../redux/modules/todos";
+import { deleteTodo, toggleStatusTodo } from "../redux/modules/todos";
 import { Link } from "react-router-dom";
 
 const List = () => {
@@ -18,7 +18,7 @@ const List = () => {
 
     return (
         <StListContainer>
-            <h2>Workning..</h2>
+            <h2>Working...</h2>
             <StListWrapper>
                 {todos.map((todo) => {
                     if (!todo.isDone) {
@@ -28,7 +28,7 @@ const List = () => {
                                     <div>상세보기</div>
                                 </StLink>
                                 <div>
-                                    <h2 className="todo-title">{todo.title}</h2>
+                                    <h2 className="todo=title">{todo.title}</h2>
                                     <div>{todo.body}</div>
                                 </div>
                                 <StDialogFooter>
@@ -52,8 +52,8 @@ const List = () => {
                     }
                 })}
             </StListWrapper>
-            <h2 className="list-title">Done..! 🎉</h2>
-        <StListWrapper>
+            <h2 className="list-title">Done..!</h2>
+            <StListWrapper>
           {todos.map((todo) => {
             if (todo.isDone) {
               return (
