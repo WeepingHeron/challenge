@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Header from '../jsxs/Header';
 import Layout from '../jsxs/Layout';
 import Form from '../jsxs/Form';
@@ -11,7 +11,7 @@ const Home = () => {
             <Form />
             <List />
         </Layout>
-    );
-};
+    )
+}
 
 export default Home;

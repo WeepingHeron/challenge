@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Layout = ({ children }) => {
-    return <StLayout>{children}</StLayout>;
-};
+    return <StLayout>{children}</StLayout>
+}
 
 export default Layout;
 

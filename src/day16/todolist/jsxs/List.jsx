@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteTodo, toggleStatusTodo } from "../redux/modules/todos";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteTodo,toggleStatusTodo } from '../redux/modules/todos';
+import { Link } from 'react-router-dom';
 
 const List = () => {
     const dispatch = useDispatch();
@@ -18,17 +18,17 @@ const List = () => {
 
     return (
         <StListContainer>
-            <h2>Working...</h2>
+            <h2>Working..</h2>
             <StListWrapper>
                 {todos.map((todo) => {
                     if (!todo.isDone) {
                         return (
-                            <StTodoContainer key={todo.id}>
+                            <StTodoContainer key={todo}>
                                 <StLink to={`/${todo.id}`} key={todo.id}>
                                     <div>상세보기</div>
                                 </StLink>
                                 <div>
-                                    <h2 className="todo-title">{todo.title}</h2>
+                                    <h2 className='todo-title'>{todo.title}</h2>
                                     <div>{todo.body}</div>
                                 </div>
                                 <StDialogFooter>
@@ -106,7 +106,7 @@ const StTodoContainer = styled.div`
     width: 270px;
     border: 4px solid teal;
     min-height: 150px;
-    border-radius: 12px;
+    border-radius: 150px;
     padding: 12px 24px 24px 24px;
 `;
 

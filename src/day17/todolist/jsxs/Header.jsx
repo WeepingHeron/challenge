@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Header = () => {
     return (
@@ -7,7 +7,7 @@ const Header = () => {
             <div>My Todo List</div>
             <div>React</div>
         </StContainer>
-    );
+    )
 };
 
 export default Header;

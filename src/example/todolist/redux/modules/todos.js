@@ -100,7 +100,8 @@
 
 // -------------------------------------------------------------------------------------
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
   todos: [
@@ -119,7 +120,19 @@ const initialState = {
   },
 };
 
-const todos = createSlice({
+export const __getTodos = createAsyncThunk(
+    'todos/getTodos',
+    async (payload, thunkAPI) => {
+        try {
+            const data = await axios.get('http://localhost:3000');
+            return thunkAPI.fulfillWithValue(data.data);
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
+export const todos = createSlice({
     name: 'TEST',
     initialState,
     reducers: {
@@ -150,7 +163,20 @@ const todos = createSlice({
             });
         },
         
-    }
+    },
+    extraReducers: {
+        [__getTodos.pending]: (state) => {
+            state.isLoading = true;
+        },
+        [__getTodos.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.todos = action.payload;
+        },
+        [__getTodos.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.error = action.payload;
+        },
+    },
 });
 
 export const { addTodo, deleteTodo, toggleStatusTodo, getTodoByID } = todos.actions;
