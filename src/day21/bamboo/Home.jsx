@@ -68,7 +68,7 @@ function Home() {
         <label>제목</label>
         <input type="text" name="title" value={title} onChange={onChangeHandler} />
         <label>내용</label>
-        <input type="text" name="content" value={content} onChange={onChangeHandler} />
+        <input type="text" name="content" value={content} onChagne={onChangeHandler} />
         <button type="submit">게시하기</button>
         <div>
           {post?.map((post) => {
@@ -78,7 +78,7 @@ function Home() {
                 <div>{post.content}</div>
                 <button onClick={() => setModalOpen(true)}>수정하기</button>
                 {modalOpen && <Modal closeHandler={closeModal} closeLabel="닫기" post={post} />}
-                <button onClick={() => onDeletePost(post.id)}>삭제하기</button>
+                <butotn onClick={() => onDeletePost(post.id)}>삭제하기</butotn>
               </div>
             )
           })}
