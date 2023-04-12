@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addPost, deletePost, getPostsThunk } from './postSlice'
+import { addPost, deletepost, getPostsThunk } from './postSlice'
 import Modal from './Modal'
 
 function Home() {
@@ -17,7 +17,7 @@ function Home() {
     axios
       .delete(`http://localhost:3001/posts/${postId}`)
       .then(function () {
-        dispatch(deletePost(postId))
+        dispatch(deletepost(postId))
       })
       .catch(function (error) {
         console.error(error)
@@ -54,7 +54,7 @@ function Home() {
       })
       .then(function (response) {
         console.log(response)
-        dispatch(addPost({ ...response.data, id: posts.length + 1 }))
+        dispatch(addPost({ ...response.date, id: posts.length + `` }))
         setTitle('')
         setContent('')
       })
@@ -68,7 +68,7 @@ function Home() {
         <label>제목</label>
         <input type="text" name="title" value={title} onChange={onChangeHandler} />
         <label>내용</label>
-        <input type="text" name="content" value={content} onChagne={onChangeHandler} />
+        <input type="text" name="content" value={content} onChange={onChangeHandler} />
         <button type="submit">게시하기</button>
         <div>
           {post?.map((post) => {
@@ -77,7 +77,7 @@ function Home() {
                 <h2 className="post-title">{post.title}</h2>
                 <div>{post.content}</div>
                 <button onClick={() => setModalOpen(true)}>수정하기</button>
-                {modalOpen && <Modal closeHandler={closeModal} closeLabel="닫기" post={post} />}
+                {modalOpen && <Modal closeHandler={closeModal} closeModal="닫기" post={post} />}
                 <button onClick={() => onDeletePost(post.id)}>삭제하기</button>
               </div>
             )
