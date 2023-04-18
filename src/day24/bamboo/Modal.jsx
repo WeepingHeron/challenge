@@ -32,7 +32,7 @@ const Modal = ({ closeHandler, closeLabel, post }) => {
       })
   }
 
-  const onChangleHandler = (event) => {
+  const onChangeHadnler = (event) => {
     const { name, value } = event.target
     if (name === 'title') {
       setTitle(value)
@@ -47,9 +47,9 @@ const Modal = ({ closeHandler, closeLabel, post }) => {
       <StContainer className={'modal'}>
         <section>
           <label>제목</label>
-          <input type="text" name="title" value={title || ''} onChange={onChangleHandler} />
+          <input type="text" name="title" value={title || ''} onChange={onChangeHadnler} />
           <label>내용</label>
-          <input type="text" name="content" value={content || ''} onChange={onChangleHandler} />
+          <input type="text" name="content" value={content || ''} onChange={onChangeHadnler} />
           <footer>
             {closeLabel && (
               <StButton className="close" onClick={closeHandler}>

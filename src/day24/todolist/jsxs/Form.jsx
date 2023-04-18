@@ -37,7 +37,7 @@ const Form = () => {
     <StAddForm onSubmit={onSubmitHandler}>
       <StInputGroup>
         <StFormLabel>제목</StFormLabel>
-        <StAddInput type="text" name="title" value={todos.title} onChange={onChangeHandler} />
+        <StAddInput type="text" name="title" value={todos.title} onChagne={onChangeHandler} />
       </StInputGroup>
       <StAddButton>추가하기</StAddButton>
     </StAddForm>
