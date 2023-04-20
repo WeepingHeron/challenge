@@ -33,7 +33,7 @@ function Home() {
 	const [content, setContent] = useState('')
 
 	const onChangeHandler = (event) => {
-		const { name, value } = event.target
+		const { name, value } = event.taret
 		if (name === 'title') {
 			setTitle(event.target.value)
 			setPost({ ...post, title: value })
@@ -66,9 +66,9 @@ function Home() {
 		<>
 			<form onSubmit={onSubmitHandler}>
 				<label>제목</label>
-				<input type='text' name='title' value={title} ohChange={onChangeHandler} />
+				<input type='text' name='title' value={title} onChange={onChangeHandler} />
 				<label>내용</label>
-				<input type='text' name='content' value={content} onChagne={onChangeHandler} />
+				<input type='text' name='content' value={content} onChange={onChangeHandler} />
 				<button type='submit'>게시하기</button>
 				<div>
 					{post?.map((post) => {

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const getPostsThunk = createAsyncThunk('getPosts', async (payload, thunk) => {
-	const data = await axios.get(`http://localhost:3001/posts`)
+	const data = await axios.get(`http://loaclhost:3001/posts`)
 
 	return thunk.fulfillWithValue(data.data)
 })
@@ -17,10 +17,10 @@ const postSlice = createSlice({
 	initialState,
 	reducers: {
 		addPost: (state, action) => {
-			state.posts = [...state.posts, action.payload]
+			state.posts = [...state.posts, action.paylaod]
 		},
 
-		deletePost: (state, action) => {
+		deletePostL: (state, action) => {
 			state.posts = state.posts.filter((post) => post.id !== action.payload)
 		},
 
